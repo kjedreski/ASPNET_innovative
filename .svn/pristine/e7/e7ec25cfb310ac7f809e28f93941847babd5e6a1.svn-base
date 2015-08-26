@@ -1,0 +1,176 @@
+﻿<%@ Page Title="Newsletter" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Newsform.Default" %>
+
+
+
+<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+    <!-- Javascript to dynamically show or hide content when button is clicked. Mainly here for show and tell purposes.
+         <link type="text/css" href="~/Content/CustomStyles.css" rel="Stylesheet" />
+        -->
+    
+</asp:Content>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+     
+  
+    <h1>Recipe Box </h1>
+    <h3>Search</h3>
+  
+
+
+
+   <asp:Panel runat="server">
+    <table>
+        <tr><td><asp:Label ID="L_email" Text="E-mail" runat="server"></asp:Label></td>
+         <td><asp:TextBox ID="T_email" Text="" runat="server" ></asp:TextBox></td></tr>
+         <tr><td><asp:Label ID="L_sitename" Text="Sitename" runat="server"></asp:Label></td>
+         <td><asp:ListBox ID="LB_sitename" runat="server">
+            <asp:ListItem Value="Crisco"></asp:ListItem>
+            <asp:ListItem Value="Hungry Jack"></asp:ListItem>
+            <asp:ListItem Value="Eagle Brand"></asp:ListItem>
+             <asp:ListItem Value="Adam's Natural PB"></asp:ListItem>
+             <asp:ListItem Value="Dickinsons's"></asp:ListItem>
+             <asp:ListItem Value="Dunkin' At Home"></asp:ListItem>
+             <asp:ListItem Value="Eagle Brand"></asp:ListItem>
+             <asp:ListItem Value="Folgers"></asp:ListItem>
+             <asp:ListItem Value="Hungry Jack"></asp:ListItem>
+             <asp:ListItem Value="Jif"></asp:ListItem>
+             <asp:ListItem Value="Laura Scudder's"></asp:ListItem>
+             <asp:ListItem Value="Magnolia"></asp:ListItem>
+             <asp:ListItem Value="Martha White"></asp:ListItem>
+             <asp:ListItem Value="Medaglia D'Oro"></asp:ListItem>
+             <asp:ListItem Value="Milstone"></asp:ListItem>
+             <asp:ListItem Value="Online Store"></asp:ListItem>
+             <asp:ListItem Value="Pilsbury"></asp:ListItem>
+             <asp:ListItem Value="Power of Family Meals"></asp:ListItem>
+             <asp:ListItem Value="R.W. Knudsen"></asp:ListItem>
+             <asp:ListItem Value="Sahale"></asp:ListItem>
+             <asp:ListItem Value="Santa Cruz"></asp:ListItem>
+             <asp:ListItem Value="Smucker's"></asp:ListItem>
+             <asp:ListItem Value="Smucker's NaturalPB"></asp:ListItem>
+             <asp:ListItem Value="Uncrustables"></asp:ListItem>
+             <asp:ListItem Value="White Lily"></asp:ListItem>
+            </asp:ListBox></td></tr>
+         <tr><td><asp:Button ID="searchbtn" class="find"  Text="Search" runat="server"  OnClick="searchbtn_Click"   /></td></tr>
+     </table>
+    </asp:Panel>
+
+    <asp:Label ID="output" runat="server"></asp:Label>    
+
+
+ 
+
+    <div id="Update" runat="server">
+        <br />
+        <hr />
+        <h3>Update</h3>
+        <table>
+            <tr>
+                <td>   <asp:Label ID="Updt_Lab_email" Text="E-mail Address" runat="server"></asp:Label>      </td>
+                <td>   <asp:TextBox ID="Updt_email" Text="" runat="server" ></asp:TextBox>   </td>
+
+                 <td>   <asp:Label ID="Updt_Lab_city" Text="City" runat="server"></asp:Label>      </td>
+                <td>   <asp:TextBox ID="Updt_city" Text="" runat="server" ></asp:TextBox>   </td>
+
+             
+
+            </tr><tr>
+                <td>   <asp:Label ID="Updt_Lab_fname" Text="First Name" runat="server"></asp:Label>      </td>
+                <td>   <asp:TextBox ID="Updt_fname" Text="" runat="server" ></asp:TextBox>   </td>     
+                
+                <td>   <asp:Label ID="Updt_Lab_state" Text="State" runat="server"></asp:Label>      </td>
+                <td>   <asp:DropDownList ID="Updt_state"  runat="server" >
+                    <asp:ListItem Value="OH"></asp:ListItem>
+                    <asp:ListItem Value="GA"></asp:ListItem>
+                    <asp:ListItem Value="MI"></asp:ListItem>
+                    <asp:ListItem Value="TA"></asp:ListItem>
+                    <asp:ListItem Value="CA"></asp:ListItem>
+                    </asp:DropDownList>   </td>
+                                                                              
+            </tr><tr>
+                 <td>   <asp:Label ID="Updt_Lab_lname" Text="Last Name" runat="server"></asp:Label>      </td>
+                 <td>   <asp:TextBox ID="Updt_lname" Text="" runat="server" ></asp:TextBox>   </td>
+
+                <td>   <asp:Label ID="Updt_Lab_zip" Text="Zip" runat="server"></asp:Label>      </td>
+                 <td>   <asp:TextBox ID="Updt_zip" Text="" runat="server" ></asp:TextBox>   </td>
+
+
+                 </tr><tr>
+                 <td>   <asp:Label ID="Updt_Lab_add" text="Address" runat="server"></asp:Label>  </td>
+                 <td>   <asp:TextBox ID="Updt_add" Text="" runat="server" ></asp:TextBox>   </td>
+
+                  <td>   <asp:Label ID="Updt_Lab_birth" text="Birth Date" runat="server"></asp:Label>  </td>
+                 <td>   <asp:TextBox ID="Updt_birth" Text="" runat="server" ></asp:TextBox>   </td>
+                
+                      </tr>
+            </table>
+        <h5>Account Sites</h5>
+        <table>
+            <tr>
+                   <td>
+                    <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+                        <asp:ListItem Value="Adam's Natural PB"></asp:ListItem>
+                        <asp:ListItem Value="Cafe Bustelo"></asp:ListItem>
+                        <asp:ListItem Value="Crisco"></asp:ListItem>
+                        <asp:ListItem Value="Crosse &"></asp:ListItem>
+                           </asp:CheckBoxList>
+                        </td>
+                <td>
+                      <asp:CheckBoxList ID="CheckBoxList2" runat="server">
+                        <asp:ListItem Value="Dickinson's"></asp:ListItem>
+                        <asp:ListItem Value="Dunkin' At Home"></asp:ListItem>
+                        <asp:ListItem Value="Eagle Brand"></asp:ListItem>
+                        <asp:ListItem Value="Folgers"></asp:ListItem>
+                                </asp:CheckBoxList>
+                       </td>
+                 <td style="width: 207px">
+                      <asp:CheckBoxList ID="CheckBoxList4" runat="server">
+                        <asp:ListItem Value="Hungry Jack"></asp:ListItem>
+                        <asp:ListItem Value="Jif"></asp:ListItem>
+                        <asp:ListItem Value="Laura Scudder's"></asp:ListItem>
+                        <asp:ListItem Value="Magnolia"></asp:ListItem>
+                                </asp:CheckBoxList>
+                       </td>
+            </tr>
+            <tr>
+                <td>
+                     <asp:CheckBoxList ID="CheckBoxList3" runat="server">
+                        <asp:ListItem Value="MarthaWhite"></asp:ListItem>
+                        <asp:ListItem Value="Medaglia D'Oro"></asp:ListItem>
+                        <asp:ListItem Value="Millstone"></asp:ListItem>
+                        <asp:ListItem Value="Online Store"></asp:ListItem>
+                                </asp:CheckBoxList>
+                </td>
+                 <td>
+                     <asp:CheckBoxList ID="CheckBoxList5" runat="server">
+                        <asp:ListItem Value="Pilsbury"></asp:ListItem>
+                        <asp:ListItem Value="Power of Family Meals"></asp:ListItem>
+                        <asp:ListItem Value="R.W. Knudsen"></asp:ListItem>
+                        <asp:ListItem Value="Sahale"></asp:ListItem>
+                                </asp:CheckBoxList>
+                </td>
+                 <td style="width: 207px">
+                     <asp:CheckBoxList ID="CheckBoxList6" runat="server">
+                        <asp:ListItem Value="Santa Crus"></asp:ListItem>
+                        <asp:ListItem Value="Smucker's"></asp:ListItem>
+                        <asp:ListItem Value="Smucker's NaturalPB"></asp:ListItem>
+                        <asp:ListItem Value="Uncrustables"></asp:ListItem>
+                         <asp:ListItem Value="White Lily"></asp:ListItem>
+                                </asp:CheckBoxList>
+                </td>
+
+
+            </tr>
+                      
+                    
+
+        </table>
+        <asp:Button ID="Updt_btn" class="Update"  runat="server" Text="Update" OnClick="Updt_btn_Click" />
+        <asp:Button ID="Dlt_btn"  class="Delete" runat="server" Text="Delete" />
+    </div>
+    
+
+    <div id="dvMsg" class="notification" runat="server" visible="false">
+        <asp:Label ID="lblMsg" runat="server"></asp:Label>
+    </div>
+
+</asp:Content>

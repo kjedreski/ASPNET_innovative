@@ -1,0 +1,122 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using System.Data.OleDb;
+
+
+
+namespace Newsform
+{
+   // public string username { get; set; }
+
+    public partial class Default : System.Web.UI.Page
+    {
+        
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            // hides visibility of the update form
+            Update.Visible = false;
+        }
+
+        protected void searchbtn_Click(object sender, EventArgs e)
+        {
+            // shows visiblity of  update form when data is read from db
+            Update.Visible = true;
+            // hide status of update or delete notification
+            dvMsg.Visible = false;
+
+
+            // a test
+            Updt_email.Text = T_email.Text;
+
+
+            // read from database. 
+          //  DBconn mydb = new DBconn(); 
+
+
+
+
+
+
+
+
+           // T_email.Text = null;
+            // dbs
+            //clear output
+            // rms only
+            // open db and send in id's as db parameters
+            // build a search and load functions
+           // from Harper's: output.Text="Update";
+
+
+        // $(".hide-me").css({ "display": "inline-block" })
+
+        }
+
+
+
+        // clears text boxes on update or delete after db connections
+        // an alert will appear notifying the user that the information was processed
+        protected void ClearTextBoxes(Control p1)
+        {
+            foreach (Control ctrl in p1.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+                    TextBox t = ctrl as TextBox;
+
+                    if (t != null)
+                    {
+                        t.Text = String.Empty;
+                    }
+                }
+                else
+                {
+                    if (ctrl.Controls.Count > 0)
+                    {
+                        ClearTextBoxes(ctrl);
+                    }
+                }
+            }
+        }
+
+        protected void Updt_btn_Click(object sender, EventArgs e)
+        {
+            // after db processes clear text boxes
+            ClearTextBoxes(Page);
+
+            // show that the whole process was successful to the user
+            dvMsg.Visible = true;
+            lblMsg.Text = "Successfully Updated!";
+        }
+
+
+
+        protected void JS_confirm(string message)
+        {
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+}

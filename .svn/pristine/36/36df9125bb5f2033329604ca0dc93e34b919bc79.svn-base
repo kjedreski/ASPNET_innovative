@@ -1,0 +1,217 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using System.Text.RegularExpressions;
+
+
+
+namespace Newsform
+{
+   // public string username { get; set; }
+
+    public partial class Default : System.Web.UI.Page
+    {
+        
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            // hides visibility of the update form
+            Update.Visible = false;
+
+            
+        }
+        
+        protected void searchbtn_Click(object sender, EventArgs e)
+        {
+            // shows visiblity of  update form when data is read from db
+            Update.Visible = true;
+            // hide status of update or delete notification
+            dvMsg.Visible = false;
+
+                // a test
+                //Updt_email.Text = T_email.Text;
+
+
+                // read from database. 
+                // have to test a reading procedure.
+                // first must build a proc.
+                DBconn mydb = new DBconn();
+                mydb.connect();
+            // commenting out for testing
+            
+                SqlDataReader rdr = mydb.execsp("CMS_RecipeBox_Search", new Object[,] {
+            { "@searchEmail" , T_email.Text } 
+
+            } 
+                    );
+
+                GenerateOut(rdr);
+
+                rdr.Close();
+                rdr.Dispose();
+                mydb.close();
+        }
+
+
+
+protected void GenerateOut(SqlDataReader rdr)
+        {
+
+
+    /*columns:
+     * CMS_UserID
+      ,EmailAddress
+      ,Password
+      ,FirstName
+      ,LastName
+      ,Address1
+      ,Address2
+      ,City
+      ,PostalCode
+      ,Common_Country_SubdivisionID
+      ,Common_ISO3166CountryID
+      ,DOB
+     * 
+     * 
+     */
+
+    // commenting out for testing
+    
+    //update information on page 
+            while (rdr.Read())
+            {
+                Updt_email.Text = rdr.GetString(rdr.GetOrdinal("EmailAddress"));
+                Updt_city.Text = rdr.GetString(rdr.GetOrdinal("City"));
+                Updt_fname.Text = rdr.GetString(rdr.GetOrdinal("FirstName"));
+                Updt_lname.Text = rdr.GetString(rdr.GetOrdinal("LastName"));
+                Updt_add.Text = rdr.GetString(rdr.GetOrdinal("Address1"));
+                Updt_zip.Text = rdr.GetString(rdr.GetOrdinal("PostalCode"));
+                
+
+            } 
+
+
+
+        }
+
+
+
+protected void Generate_checkboxes()
+{
+    
+    /* markup we want to dynamically generate:
+      <table>
+            <tr>
+                   <td>
+                    <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+                        <asp:ListItem Value="Adam's Natural PB"></asp:ListItem>
+                        <asp:ListItem Value="Cafe Bustelo"></asp:ListItem>
+                        <asp:ListItem Value="Crisco"></asp:ListItem>
+                        <asp:ListItem Value="Crosse &"></asp:ListItem>
+                           </asp:CheckBoxList>
+                        </td>
+                <td>
+                      <asp:CheckBoxList ID="CheckBoxList2" runat="server">
+                        <asp:ListItem Value="Dickinson's"></asp:ListItem>
+                        <asp:ListItem Value="Dunkin' At Home"></asp:ListItem>
+                        <asp:ListItem Value="Eagle Brand"></asp:ListItem>
+                        <asp:ListItem Value="Folgers"></asp:ListItem>
+                                </asp:CheckBoxList>
+                       </td>
+     
+     
+     
+     */
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // clears text boxes on update or delete after db connections
+        // an alert will appear notifying the user that the information was processed
+        protected void ClearTextBoxes(Control p1)
+        {
+            foreach (Control ctrl in p1.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+                    TextBox t = ctrl as TextBox;
+
+                    if (t != null)
+                    {
+                        t.Text = String.Empty;
+                    }
+                }
+                else
+                {
+                    if (ctrl.Controls.Count > 0)
+                    {
+                        ClearTextBoxes(ctrl);
+                    }
+                }
+            }
+        }
+
+        protected void Updt_btn_Click(object sender, EventArgs e)
+        {
+            // after db processes clear text boxes
+            ClearTextBoxes(Page);
+
+            // show that the whole process was successful to the user
+            dvMsg.Visible = true;
+            lblMsg.Text = "Successfully Updated!";
+        }
+
+
+
+        protected void JS_confirm(string message)
+        {
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+}

@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\kjedresk\Desktop\orrtrd01_stuff\published_rms_app</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>07/31/2015 10:51:05</publishTime>
+    </File>
+    <File Include="bin/AspNet.ScriptManager.bootstrap.dll">
+      <publishTime>07/31/2015 10:51:04</publishTime>
+    </File>
+    <File Include="bin/AspNet.ScriptManager.jQuery.dll">
+      <publishTime>07/31/2015 10:51:04</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.FriendlyUrls.dll">
+      <publishTime>07/31/2015 10:51:04</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Web.Optimization.WebForms.dll">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ScriptManager.MSAjax.dll">
+      <publishTime>07/31/2015 10:51:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ScriptManager.WebForms.dll">
+      <publishTime>07/31/2015 10:51:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/31/2015 10:51:04</publishTime>
+    </File>
+    <File Include="bin/Newsform.dll">
+      <publishTime>08/19/2015 14:58:43</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>07/31/2015 10:51:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>07/31/2015 10:51:04</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>07/31/2015 10:51:04</publishTime>
+    </File>
+    <File Include="Bundle.config">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="Content/BerryLogo.bmp">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="Content/CustomStyles.css">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="Content/jquery_stuff.css">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>08/19/2015 14:58:08</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/DetailsView.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/Focus.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/GridView.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/jquery_show_hide.js">
+      <publishTime>07/31/2015 10:52:52</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/Menu.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MenuStandards.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjax.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxApplicationServices.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxComponentModel.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxCore.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxGlobalization.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxHistory.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxNetwork.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxSerialization.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxTimer.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxWebForms.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxWebServices.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/SmartNav.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/TreeView.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/WebForms.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/WebParts.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/WebUIValidation.js">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="Site.Master">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="Site.Mobile.Master">
+      <publishTime>07/31/2015 10:51:03</publishTime>
+    </File>
+    <File Include="ViewSwitcher.ascx">
+      <publishTime>07/31/2015 10:51:02</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/19/2015 14:58:48</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
