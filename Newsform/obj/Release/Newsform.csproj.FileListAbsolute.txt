@@ -18,4 +18,3 @@ C:\Users\kjedresk\Desktop\orrtrd01_stuff\rms_app\Newsform\bin\Newtonsoft.Json.xm
 C:\Users\kjedresk\Desktop\orrtrd01_stuff\rms_app\Newsform\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\Users\kjedresk\Desktop\orrtrd01_stuff\rms_app\Newsform\obj\Release\Newsform.dll
 C:\Users\kjedresk\Desktop\orrtrd01_stuff\rms_app\Newsform\obj\Release\Newsform.pdb
-C:\Users\kjedresk\Desktop\orrtrd01_stuff\rms_app\Newsform\obj\Release\Newsform.csprojResolveAssemblyReference.cache

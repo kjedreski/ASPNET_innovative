@@ -10,12 +10,12 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using Newsform;
-
-
-// enjoy
-
-
-
+/// Again I apologize, some of this is spaghetti code, If i had more time at the end
+/// // I would defintley modularize as much as I could.
+/// I tried my best to comment everything.
+/// I hope you find use out of this
+/// // Kevin Jedreski
+/// 
 namespace Newsform
 {
    // public string username { get; set; }
@@ -26,31 +26,63 @@ namespace Newsform
         
         protected void Generate_hashtable()
         {
-
-            DBconn mydb = new DBconn();
-            mydb.connect();
-
-            SqlDataReader rdr = mydb.execsp("CMS_RecipeBox_Hashtable", new Object[,] {
-            { "@searchEmail" , T_email.Text } 
-              });
-
-            // generates hashtable by loading table values in
-            while (rdr.Read())
-            {
-                Site_Keys.Add(rdr.GetString(rdr.GetOrdinal("UR")), rdr.GetInt32(rdr.GetOrdinal("Common_WebSiteID")));
-            }
-            rdr.Close();
-            rdr.Dispose();
-            mydb.close();
-
+            Site_Keys.Add("smuckers",1);
+            Site_Keys.Add("jif",2);
+            Site_Keys.Add("crisco",3);
+            Site_Keys.Add("crosseandblackwell",4);
+            Site_Keys.Add( "pillsburybaking",5);
+            Site_Keys.Add("petmilk",6);
+            Site_Keys.Add( "hungryjack",7);
+            Site_Keys.Add("marthawhite",8);
+            Site_Keys.Add("adamspeanutbutter", 9);
+            Site_Keys.Add( "laurascudderspeanutbutter",10);
+            Site_Keys.Add( "whitelily",11);
+            Site_Keys.Add( "poweroffamilymeals",12);
+            Site_Keys.Add( "eaglebrand",13);
+            Site_Keys.Add( "nonesuchsrecipes",14);
+            Site_Keys.Add("bordeneggnog",15);
+            Site_Keys.Add( "magnoliabrand",16);
+            Site_Keys.Add("Folgers",17);
+            Site_Keys.Add( "Millstone",18);
+            Site_Keys.Add("NaturesPeakFrozenFoods",19);
+            Site_Keys.Add( "GoldenTempleFood",20);
+            Site_Keys.Add("dicksonsfamily",21);
+            Site_Keys.Add( "dunkinathome",22);
+            Site_Keys.Add( "kavacoffee",23);
+            Site_Keys.Add("knottsberryfarmfoods",24);
+            Site_Keys.Add( "criscoenespanol",25);
+            Site_Keys.Add("naturallypoweredbyyou",26);
+            Site_Keys.Add( "medagliadoro",27);
+            Site_Keys.Add( "rwknudsenfamily",28);
+            Site_Keys.Add( "scojuice",29);
+            Site_Keys.Add("truroots",30);
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             // hides visibility of the update form
             Update.Visible = false;
+            /*
+                DBconn mydb = new DBconn();
+                mydb.connect();
+                    // first sqlDataReader is for finding the personal info with email. (CMS_USER)
+                      SqlDataReader rdr = mydb.execsp("CMS_RecipeBox_NewSearch", new Object[,] {
+                      });
+                      CheckBoxList7.DataSource = rdr;
+
+                      CheckBoxList7.DataTextField = "URI";
+                      CheckBoxList7.DataValueField = "Common_WebSiteID";
+                      CheckBoxList7.DataBind();
+                      rdr.Close();
+                      rdr.Dispose(); 
+            */
+
+        
         }
 
+
+        
+        
         protected void searchbtn_Click(object sender, EventArgs e)
         {
             // shows visiblity of  update form when data is read from db
@@ -58,19 +90,21 @@ namespace Newsform
             // hide status of update or delete notification
             dvMsg.Visible = false;
 
-            // read from database. 
-            DBconn mydb = new DBconn();
-            mydb.connect();
+                // read from database. 
+                DBconn mydb = new DBconn();
+                mydb.connect();
 
-            // first sqlDataReader is for finding the personal info with email. (CMS_USER)
-            SqlDataReader rdr = mydb.execsp("CMS_RecipeBox_Search", new Object[,] {
-            { "@searchEmail" , T_email.Text } 
-              }
-                 );
-             GenerateOutPersonalInfo(rdr);
+                    // first sqlDataReader is for finding the personal info with email. (CMS_USER)
+                    SqlDataReader rdr = mydb.execsp("CMS_RecipeBox_Search", new Object[,] {
+                    { "@searchEmail" , T_email.Text } 
+                  }
+                    );
+                    GenerateOutPersonalInfo(rdr);
                     rdr.Close();
                     rdr.Dispose();
                 
+             
+
             // second sqlDataReader is for finding the one-to-many relationship
             // for all websites to e-mail
                 SqlDataReader rdr2 = mydb.execsp("CMS_RecipeBox_Search_Site", new Object[,] {
@@ -89,8 +123,8 @@ protected void GenerateOutPersonalInfo(SqlDataReader rdr)
     //update information on page 
     // data binding
           
-        //    try
-        //    {
+            try
+            {
                 while (rdr.Read())
                 {
                     Updt_email.Text = rdr.GetString(rdr.GetOrdinal("EmailAddress"));
@@ -100,11 +134,11 @@ protected void GenerateOutPersonalInfo(SqlDataReader rdr)
                     Updt_add.Text = rdr.GetString(rdr.GetOrdinal("Address1"));
                     Updt_zip.Text = rdr.GetString(rdr.GetOrdinal("PostalCode"));
                 }
-          //  }
-          /*  catch(Exception exe)
+            }
+            catch(Exception exe)
             {
                 Response.Write("<script>alert('test')</script>");
-            } */
+            }
         }
 
 protected void GenerateOutSites(SqlDataReader rdr)
@@ -133,42 +167,41 @@ protected void GenerateOutSites(SqlDataReader rdr)
 // utility function for reading websites
 protected void MarkCheckBoxes(string[] sites)
 {
-
-        // read the sites into appropiate listboxes
-        // 6 comes from listbox id's of 1-6
-        for (int i = 1; i <= 28; i++)
+    // read the sites into appropiate listboxes
+    // 6 comes from listbox id's of 1-6
+    for (int i = 1; i <= 28; i++)
+    {
+        foreach (ListItem item in CheckBoxList1.Items)
         {
-            foreach (ListItem item in CheckBoxList1.Items)
-            {
-                if (sites[i] == item.Value.ToString())
-                    item.Selected = true;
-            }
-            foreach (ListItem item in CheckBoxList2.Items)
-            {
-                if (sites[i] == item.Value.ToString())
-                    item.Selected = true;
-            }
-            foreach (ListItem item in CheckBoxList3.Items)
-            {
-                if (sites[i] == item.Value.ToString())
-                    item.Selected = true;
-            }
-            foreach (ListItem item in CheckBoxList4.Items)
-            {
-                if (sites[i] == item.Value.ToString())
-                    item.Selected = true;
-            }
-            foreach (ListItem item in CheckBoxList5.Items)
-            {
-                if (sites[i] == item.Value.ToString())
-                    item.Selected = true;
-            }
-            foreach (ListItem item in CheckBoxList6.Items)
-            {
-                if (sites[i] == item.Value.ToString())
-                    item.Selected = true;
-            }
+            if (sites[i] == item.Value.ToString())
+                item.Selected = true;
         }
+        foreach (ListItem item in CheckBoxList2.Items)
+        {
+            if (sites[i] == item.Value.ToString())
+                item.Selected = true;
+        }
+        foreach (ListItem item in CheckBoxList3.Items)
+        {
+            if (sites[i] == item.Value.ToString())
+                item.Selected = true;
+        }
+        foreach (ListItem item in CheckBoxList4.Items)
+        {
+            if (sites[i] == item.Value.ToString())
+                item.Selected = true;
+        }
+        foreach (ListItem item in CheckBoxList5.Items)
+        {
+            if (sites[i] == item.Value.ToString())
+                item.Selected = true;
+        }
+        foreach (ListItem item in CheckBoxList6.Items)
+        {
+            if (sites[i] == item.Value.ToString())
+                item.Selected = true;
+        }
+    }
 }
 // utility function
 // clear all marked list boxes

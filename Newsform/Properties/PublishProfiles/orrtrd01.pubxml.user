@@ -34,7 +34,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/31/2015 10:51:04</publishTime>
     </File>
     <File Include="bin/Newsform.dll">
-      <publishTime>08/19/2015 14:58:43</publishTime>
+      <publishTime>08/27/2015 14:07:14</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>07/31/2015 10:51:04</publishTime>
@@ -67,7 +67,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/31/2015 10:51:03</publishTime>
     </File>
     <File Include="Default.aspx">
-      <publishTime>08/19/2015 14:58:08</publishTime>
+      <publishTime>08/27/2015 13:57:16</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>07/31/2015 10:51:03</publishTime>
@@ -193,7 +193,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/31/2015 10:51:02</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/19/2015 14:58:48</publishTime>
+      <publishTime>08/27/2015 14:07:21</publishTime>
     </File>
   </ItemGroup>
 </Project>
